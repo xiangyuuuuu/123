@@ -1,23 +1,17 @@
 #include "pch.h"
 #include <iostream>
-using namespace std;
-
-int GCD(int a, int b) {
-	if (a%b == 0) {
-		return b;
-	}
-	else {
-		return GCD(b, a%b);
-	}
+int Factorial(int n) {
+	if (n == 0)
+		return 1;
+	else
+		return n * Factorial(n - 1);
 }
+
 int main(){
-	printf("輸入兩個數:");
-	int a, b;
-	scanf_s("%d %d", &a, &b);
-
-	int result = GCD(a, b);
-	printf("GCD result: %d\n", result);
+	int n, Total;
+	printf("請輸入數字 n:");
+	scanf_s(" %d", &n);
+	Total = Factorial(n);
+	printf("n!=%d", Total);
 	return 0;
-
-	
 }
